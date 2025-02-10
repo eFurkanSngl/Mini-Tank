@@ -4,5 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _isGameOver = false;
+    public bool _isGameOver = false;
+    [SerializeField] private GameObject _player;
+
+   public void GameOver()
+    {
+        _isGameOver = true;
+        if (_isGameOver)
+        {
+            Time.timeScale = 0f;
+            _player.SetActive(false);
+        }
+    }
 }
